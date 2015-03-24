@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# requirement: unicodecsv
 
 import json
 import unicodecsv as csv
@@ -75,8 +74,8 @@ def parse_file(filename):
             for k in s.keys():
             	if k not in fieldnames:
             		del s[k]
-            if (s['type'] in ('WatchEvent', 'FollowEvent', 'ForkEvent') 
-            	and s['actor.login'] in active_users 
+            if (s['type'] in ('WatchEvent', 'FollowEvent', 'ForkEvent')
+            	and s['actor.login'] in active_users
             	and s['repo.name'] in popular_repos):
                 writer.writerow(s)
 
